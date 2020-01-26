@@ -9,9 +9,11 @@ const app = express();
 const Movies = Models.Movie;
 const Users = Models.User;
 const { check, validationResult } = require("express-validator");
-mongoose.connect("mongodb://localhost:27017/myflixdb", {
-  useNewUrlParser: true
-});
+// mongoose.connect("mongodb://localhost:27017/myflixdb", {useNewUrlParser: true});
+mongoose.connect(
+  "mongodb+srv://mva66:Kidaan16@myflixdb-niqk6.mongodb.net/myFlixDB?retryWrites=true",
+  { useNewUrlParser: true }
+);
 
 app.use(morgan("common"));
 app.use(express.static("public"));

@@ -1,4 +1,0 @@
-{"_id":{"$oid":"5e23ccc650ee527f72df67e4"},"Username":"jdrake","Password":"12345","Email":"jdrake@gmail.com","Birthday":"1970-05-23","FavoriteMovies":[{"$oid":"5e23caef50ee527f72df67da"},{"$oid":"5e23cb0250ee527f72df67db"},{"$oid":"5e23cb1550ee527f72df67dc"}]}
-{"_id":{"$oid":"5e23ccd850ee527f72df67e5"},"Username":"pholly","Password":"p1234","Email":"pholly@gmail.com","Birthday":"1980-11-15","FavoriteMovies":[{"$oid":"5e23cb1550ee527f72df67dc"},{"$oid":"5e23cb3250ee527f72df67dd"}]}
-{"_id":{"$oid":"5e23cce550ee527f72df67e6"},"Username":"lisad","Password":"iuylt","Email":"lisad@gmail.com","Birthday":"1989-03-07","FavoriteMovies":[{"$oid":"5e23cb4450ee527f72df67de"},{"$oid":"5e23cb5550ee527f72df67df"},{"$oid":"5e23cb1550ee527f72df67dc"}]}
-{"_id":{"$oid":"5e23cd0150ee527f72df67e8"},"Username":"kellyd","Password":"ku09h","Email":"kellyd@gmail.com","Birthday":"1990-02-15","FavoriteMovies":[{"$oid":"5e23cba950ee527f72df67e2"},{"$oid":"5e23cbba50ee527f72df67e3"}]}
