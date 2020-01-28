@@ -227,7 +227,7 @@ app.put(
     check("Email", "Email does not appear to be valid").isEmail()
   ],
   function(req, res) {
-    var hashedPassword = Users.hashedPassword(req.body.Password);
+    var hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOneAndUpdate(
       { Username: req.params.Username },
       {
