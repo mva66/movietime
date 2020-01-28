@@ -149,18 +149,16 @@ app.post(
     check("Email", "Email does not appear to be valid").isEmail()
   ],
   (req, res) => {
-    //check the validation object for errors
     var errors = validationResult(req);
 
-    if (!error.isEmpty()) {
+    if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
     }
-
-    var hashedPassword = Users.hashedPassword(req.body.Password);
+    var hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOne({ Username: req.body.Username })
       .then(function(user) {
         if (user) {
-          return res.status(400).send(req.body.Username + "already exists");
+          return res.status(400).send(req.body.Username + " already exists");
         } else {
           Users.create({
             Username: req.body.Username,
@@ -183,7 +181,6 @@ app.post(
       });
   }
 );
-
 // delete user from the list by username
 app.delete(
   "/users/:Username",
