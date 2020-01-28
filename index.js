@@ -95,10 +95,7 @@ app.get("/movies/genres/:Name", function(req, res) {
 });
 
 //get list of users
-app.get("/users", passport.authenticate("jwt", { session: false }), function(
-  req,
-  res
-) {
+app.get("/users", function(req, res) {
   Users.find()
     .then(function(users) {
       res.status(201).json(users);
