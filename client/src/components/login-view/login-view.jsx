@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -24,12 +25,6 @@ export function LoginView(props) {
       .catch((e) => {
         console.log("no such user");
       });
-  };
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-    console.log(register);
-    /*send a request to the server for authentication*/
   };
 
   return (
@@ -58,20 +53,16 @@ export function LoginView(props) {
         <Button id="loginButton" onClick={handleSubmit}>
           Log in
         </Button>
-
-        <Form.Group>
-          <Form.Text>
-            New User?
-            <Button id="registerButton" onClick={handleRegister}>
-              SignUp
-            </Button>
-          </Form.Text>
-        </Form.Group>
+        <Link to={`/register`}>
+          <Button variant="link" className="registerButton" type="submit">
+            Sign Up
+          </Button>
+        </Link>
       </Form>
     </Container>
   );
 }
 
-LoginView.propTypes = {
+/*LoginView.propTypes = {
   onLoggedIn: PropTypes.func.isRequired,
-};
+};*/

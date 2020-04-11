@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import axios from "axios";
 
 export function RegistrationView(props) {
   const [email, setemail] = useState("");
@@ -10,11 +11,23 @@ export function RegistrationView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    /*send a request to the server for authentication*/
-    props.onRegister(username);
+    axios
+      .post("https://myflix16.herokuapp.com/users", {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: dob,
+      })
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        window.open("/", "_self");
+      })
+      .catch((e) => {
+        console.log("error registering the user");
+      });
   };
 
   return (
@@ -60,14 +73,10 @@ export function RegistrationView(props) {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
+        <Button variant="primary" type="submit" onClick={handleRegister}>
           Register
         </Button>
       </Form>
     </Container>
   );
 }
-
-RegistrationView.propTypes = {
-  onRegister: PropTypes.func.isRequired,
-};
