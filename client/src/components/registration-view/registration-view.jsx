@@ -32,7 +32,9 @@ export function RegistrationView(props) {
 
   return (
     <Container className="registrationContainer">
-      <h1>Welcome to My Flix</h1>
+      <h1>Register User</h1>
+      <br />
+      <br />
       <Form>
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>

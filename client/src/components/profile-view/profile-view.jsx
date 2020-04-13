@@ -2,160 +2,134 @@ import React from "react";
 //Routing
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+
 //Styling
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 
 export class ProfileView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
     this.state = {
       username: null,
       password: null,
       email: null,
       birthday: null,
-      userInfo: null,
-      favorites: [],
+      favoriteMovies: [],
       movies: [],
     };
   }
 
   componentDidMount() {
     //authentication
-    let accessToken = localStorage.getItem("token");
-    if (accessToken !== null) {
-      this.getUser(accessToken);
-    }
+    const accessToken = localStorage.getItem("token");
+    this.getUser(accessToken);
   }
 
   getUser(token) {
-    let Username = localStorage.getItem("user");
+    const username = localStorage.getItem("user");
 
     axios
-      .get(`https://myflix16.herokuapp.com/users/${Username}`, {
+      .get(`https://myflix16.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
-      .then((response) => {
-        console.log(response);
+      .then((res) => {
         this.setState({
-          userData: response.data,
-          Name: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday,
-          Favoritemovies: response.data.FavoriteMovies,
+          Username: res.data.Username,
+          Password: res.data.Password,
+          Email: res.data.Email,
+          Birthday: res.data.Birthday,
+          FavoriteMovies: res.data.FavoriteMovies,
         });
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch(function (err) {
+        console.log(err);
       });
   }
 
-  deleteFavorite(event, favorite) {
-    event.preventDefault();
-    console.log(favorite);
+  deleteFavoriteMovie(movieId) {
+    console.log(this.props.movies);
     axios
       .delete(
         `https://myflix16.herokuapp.com/users/${localStorage.getItem(
           "user"
-        )}/Favorites/${favorite}`,
+        )}/Movies/${movieId}`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
+      )
+      .then((res) => {
+        alert("Removed movie from favorites");
+      })
+      .catch((e) => {
+        alert("error removing movie" + e);
+      });
+  }
+
+  deleteUser(e) {
+    axios
+      .delete(
+        `https://myflix16.herokuapp.com/users/${localStorage.getItem("user")}`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       )
       .then((response) => {
-        this.getUser(localStorage.getItem("token"));
+        alert("Account deleted");
+        localStorage.removeItem("token", "user");
+        window.open("/");
       })
       .catch((event) => {
-        alert("Somethings not right");
+        alert("failed to delete user");
       });
   }
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
   render() {
-    const { username, email, birthday, favorites } = this.state;
     const { movies } = this.props;
+    const favoriteMovieList = movies.filter((movie) =>
+      this.state.favoriteMovies.includes(movie._id)
+    );
     return (
-      <div className="profile-view">
+      <div>
         <Container>
-          <Card className="profile-view" style={{ width: "32rem" }}>
+          <h1>My Profile</h1>
+          <br />
+          <Card>
             <Card.Body>
-              <Card.Title className="profile-title">My Profile</Card.Title>
-
-              <ListGroup>
-                <ListGroup.Item>Username: {username}</ListGroup.Item>
-
-                <ListGroup.Item>Password:******* </ListGroup.Item>
-
-                <ListGroup.Item>Email: {email}</ListGroup.Item>
-
-                <ListGroup.Item>Birthday: {birthday}</ListGroup.Item>
-              </ListGroup>
-
-              <div>
-                <Link to={`/`}>
-                  <Button>MOVIES</Button>
-                </Link>
-                <Link to={`/update/:Email`}>
-                  <Button className="button-update" variant="outline-secondary">
-                    Update profile
+              <Card.Text>Username: {this.state.Username}</Card.Text>
+              <Card.Text>Password: xxxxxx</Card.Text>
+              <Card.Text>Email: {this.state.Email}</Card.Text>
+              <Card.Text>Birthday {this.state.Birthday}</Card.Text>
+              Favorite Movies:
+              {favoriteMovieList.map((movie) => (
+                <div key={movie._id} className="fav-movies-button">
+                  <Link to={`/movies/${movie._id}`}>
+                    <Button variant="link">{movie.Title}</Button>
+                  </Link>
+                  <Button
+                    size="sm"
+                    onClick={(e) => this.deleteFavoriteMovie(movie._id)}
+                  >
+                    Remove Favorite
                   </Button>
-                </Link>
-              </div>
+                </div>
+              ))}
+              <br />
+              <br />
+              <Link to={"/user/update"}>
+                <Button variant="primary">Update Profile</Button>
+                <br />
+                <br />
+              </Link>
+              <Button onClick={() => this.deleteUser()}>Delete User</Button>
+              <br />
+              <br />
+              <Link to={`/`}>Back</Link>
             </Card.Body>
           </Card>
-        </Container>
-        <br />
-        <Container>
-          <div className="favorite-movies">
-            <span className="label">Favorite Movies: </span>
-
-            <span className="Value">
-              {favorites.map((favorite) => {
-                const movie = movies.find((movie) => movie._id === favorite);
-
-                if (movie) {
-                  return (
-                    <div className="favorites" key={favorite}>
-                      <Link to={`/movies/${movie._id}`}>
-                        <img
-                          className="movie-poster"
-                          style={{ width: "6rem" }}
-                          src={movie.ImagePath}
-                        />
-                      </Link>
-                      <div>
-                        <Button
-                          size="sm"
-                          onClick={(event) =>
-                            this.deleteFavorite(event, favorite)
-                          }
-                        >
-                          Remove
-                        </Button>
-                      </div>
-                      <br />
-                    </div>
-                  );
-                }
-              })}
-            </span>
-          </div>
-        </Container>
-
-        <Container>
-          <div>
-            <Link to={`/`}>
-              <Button variant="link">Back</Button>
-            </Link>
-          </div>
         </Container>
       </div>
     );

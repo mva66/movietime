@@ -1,14 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-import {
-  Button,
-  Form,
-  FormControl,
-  Navbar,
-  Nav,
-  NavDropdown,
-} from "react-bootstrap";
+import { Button, Navbar, Nav } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
@@ -21,6 +14,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
 import { ProfileView } from "../profile-view/profile-view";
+import { UpdateProfile } from "../update-profile/update-profile";
 
 export class MainView extends React.Component {
   constructor() {
@@ -84,53 +78,26 @@ export class MainView extends React.Component {
       <Router>
         <Navbar bg="light" expand="lg">
           <Navbar.Brand as={Link} to="/">
-            MovieMania
+            <h1>My Flix</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link as={Link} to="/">
-                Home
+                <h3>Home</h3>
               </Nav.Link>
-              <Nav.Link as={Link} to="/users/:Username">
-                Profile
+              <Nav.Link as={Link} to="/user">
+                <h3>Profile</h3>
               </Nav.Link>
-              <Nav.Link as={Link} to="/about">
-                About
-              </Nav.Link>
-              <Nav.Link as={Link} to="/contact">
-                Contact
-              </Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Button size="sm" onClick={() => this.onLoggedOut()}>
+              <Button variant="link" onClick={() => this.onLogout()}>
                 <b>Log Out</b>
               </Button>
-              <Link to={`/user`}>
-                <Button>Profile</Button>
-              </Link>
             </Nav>
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
           </Navbar.Collapse>
         </Navbar>
+        <br></br>
+        <br></br>
+        <br></br>
         <div className="main-view">
           <Route
             exact
@@ -143,14 +110,9 @@ export class MainView extends React.Component {
               return movies.map((m) => <MovieCard key={m._id} movie={m} />);
             }}
           />
+
           <Route path="/register" render={() => <RegistrationView />} />
-          <Route
-            exact
-            path="/"
-            render={() =>
-              movies.map((m) => <MovieCard key={m._id} movie={m} />)
-            }
-          />
+
           <Route
             path="/movies/:movieId"
             render={({ match }) => (
@@ -186,21 +148,14 @@ export class MainView extends React.Component {
               );
             }}
           />
-          <Route
-            path="/users/:Username"
-            render={({ match }) => {
-              if (!user)
-                return (
-                  <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                );
-              return <ProfileView />;
-            }}
-          />
+
           <Route
             exact
             path="/user"
             render={() => <ProfileView movies={movies} />}
           />
+
+          <Route path="/user/update" render={() => <UpdateProfile />} />
         </div>
       </Router>
     );

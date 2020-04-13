@@ -49,5 +49,4 @@ export class MovieView extends React.Component {
       Name: PropTypes.string.isRequired,
     }),
   }).isRequired,
-  onClick: PropTypes.func.isRequired,
 };*/
