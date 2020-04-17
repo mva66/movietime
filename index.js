@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
@@ -18,6 +19,7 @@ mongoose.connect(
 
 app.use(morgan("common"));
 app.use(express.static("public"));
+app.use("/client", express.static(path.join(__dirname, "client", "dist")));
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -42,6 +44,10 @@ app.use(
     },
   })
 );
+
+app.get("/client/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 //list of all movies
 app.get("/", function (req, res) {
