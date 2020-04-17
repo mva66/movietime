@@ -23,6 +23,10 @@ app.use("/client", express.static(path.join(__dirname, "client", "dist")));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/client/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
+
 var auth = require("./auth")(app);
 const passport = require("passport");
 require("./passport");
@@ -44,10 +48,6 @@ app.use(
     },
   })
 );
-
-app.get("/client/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
 
 //list of all movies
 app.get("/", function (req, res) {

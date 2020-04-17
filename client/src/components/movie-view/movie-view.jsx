@@ -18,21 +18,19 @@ export class MovieView extends React.Component {
     if (!movie) return null;
 
     return (
-      <div>
-        <Card style={{ width: "24rem" }}>
-          <Card.Img variant="top" src={movie.ImagePath} />
-          <Card.Body>
-            <Card.Title>{movie.Title}</Card.Title>
-            <Card.Text>Description: {movie.Description}</Card.Text>
-            <Card.Text>Genre: {movie.Genre.Name}</Card.Text>
-            <Card.Text>Director: {movie.Director.Name}</Card.Text>
-            <Card.Text>Director Bio: {movie.Director.Bio}</Card.Text>
-            <Link to={`/`}>
-              <Button variant="link">Back</Button>
-            </Link>
-          </Card.Body>
-        </Card>
-      </div>
+      <Card style={{ width: "24rem" }}>
+        <Card.Img variant="top" src={movie.ImagePath} />
+        <Card.Body>
+          <Card.Title>{movie.Title}</Card.Title>
+          <Card.Text>Description: {movie.Description}</Card.Text>
+          <Card.Text>Genre: {movie.Genre.Name}</Card.Text>
+          <Card.Text>Director: {movie.Director.Name}</Card.Text>
+          <Card.Text>Director Bio: {movie.Director.Bio}</Card.Text>
+          <Link to={`/`}>
+            <Button variant="link">Back</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     );
   }
 }
