@@ -2,6 +2,8 @@ import React from "react";
 //Routing
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import Col from "react-bootstrap/Col";
 
 //Styling
 import Button from "react-bootstrap/Button";
@@ -17,7 +19,7 @@ export class ProfileView extends React.Component {
       password: null,
       email: null,
       birthday: null,
-      favoriteMovies: [],
+      FavoriteMovies: [],
       movies: [],
     };
   }
@@ -88,50 +90,54 @@ export class ProfileView extends React.Component {
   }
 
   render() {
-    const { movies } = this.props;
-    const favoriteMovieList = movies.filter((movie) =>
-      this.state.favoriteMovies.includes(movie._id)
+    const favoriteMovieList = this.props.movies.filter((m) =>
+      this.state.FavoriteMovies.includes(m._id)
     );
+
     return (
       <div>
         <Container>
-          <h1>My Profile</h1>
-          <br />
-          <Card>
-            <Card.Body>
-              <Card.Text>Username: {this.state.Username}</Card.Text>
-              <Card.Text>Password: xxxxxx</Card.Text>
-              <Card.Text>Email: {this.state.Email}</Card.Text>
-              <Card.Text>Birthday {this.state.Birthday}</Card.Text>
-              Favorite Movies:
-              {favoriteMovieList.map((movie) => (
-                <div key={movie._id} className="fav-movies-button">
-                  <Link to={`/movies/${movie._id}`}>
-                    <Button variant="link">{movie.Title}</Button>
-                  </Link>
-                  <Button
-                    size="sm"
-                    onClick={(e) => this.deleteFavoriteMovie(movie._id)}
-                  >
-                    Remove Favorite
-                  </Button>
-                </div>
-              ))}
-              <br />
-              <br />
-              <Link to={"/user/update"}>
-                <Button variant="primary">Update Profile</Button>
+          <Col>
+            <h1>My Profile</h1>
+            <br />
+
+            <Card>
+              <Card.Body>
+                <Card.Text>Username: {this.state.Username}</Card.Text>
+                <Card.Text>Password: xxxxxx</Card.Text>
+                <Card.Text>Email: {this.state.Email}</Card.Text>
+                <Card.Text>Birthday {this.state.Birthday}</Card.Text>
+                Favorite Movies:
+                {favoriteMovieList.map((m) => (
+                  <div key={m._id} className="fav-movies-button">
+                    <Link to={`/movies/${m._id}`}>
+                      <Button variant="link">{m.Title}</Button>
+                    </Link>
+                    <Button
+                      size="sm"
+                      onClick={(e) => this.deleteFavoriteMovie(m._id)}
+                    >
+                      Remove
+                    </Button>
+                  </div>
+                ))}
                 <br />
                 <br />
-              </Link>
-              <Button onClick={() => this.deleteUser()}>Delete User</Button>
-              <br />
-              <br />
-              <Link to={`/`}>Back</Link>
-            </Card.Body>
-          </Card>
+                <Link to={"/user/update"}>
+                  <Button variant="primary">Update Profile</Button>
+                </Link>
+                <br />
+                <br />
+                <Button onClick={() => this.deleteUser()}>Delete User</Button>
+                <br />
+                <br />
+                <Link to={`/`}>Back</Link>
+              </Card.Body>
+            </Card>
+          </Col>
         </Container>
       </div>
     );
   }
 }
+export default connect(({ movies, users }) => ({ movies, users }))(ProfileView);
