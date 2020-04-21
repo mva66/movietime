@@ -29979,7 +29979,9 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ReactReduxContext = /*#__PURE__*/_react.default.createContext(null);
+var ReactReduxContext =
+/*#__PURE__*/
+_react.default.createContext(null);
 
 exports.ReactReduxContext = ReactReduxContext;
 
@@ -30097,7 +30099,9 @@ function createListenerCollection() {
   };
 }
 
-var Subscription = /*#__PURE__*/function () {
+var Subscription =
+/*#__PURE__*/
+function () {
   function Subscription(store, parentSub) {
     this.store = store;
     this.parentSub = parentSub;
@@ -31327,7 +31331,9 @@ function createConnect(_temp) {
   };
 }
 
-var _default = /*#__PURE__*/createConnect();
+var _default =
+/*#__PURE__*/
+createConnect();
 
 exports.default = _default;
 },{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","../components/connectAdvanced":"../node_modules/react-redux/es/components/connectAdvanced.js","../utils/shallowEqual":"../node_modules/react-redux/es/utils/shallowEqual.js","./mapDispatchToProps":"../node_modules/react-redux/es/connect/mapDispatchToProps.js","./mapStateToProps":"../node_modules/react-redux/es/connect/mapStateToProps.js","./mergeProps":"../node_modules/react-redux/es/connect/mergeProps.js","./selectorFactory":"../node_modules/react-redux/es/connect/selectorFactory.js"}],"../node_modules/react-redux/es/hooks/useReduxContext.js":[function(require,module,exports) {
@@ -31420,7 +31426,9 @@ function createStoreHook(context) {
  */
 
 
-var useStore = /*#__PURE__*/createStoreHook();
+var useStore =
+/*#__PURE__*/
+createStoreHook();
 exports.useStore = useStore;
 },{"react":"../node_modules/react/index.js","../components/Context":"../node_modules/react-redux/es/components/Context.js","./useReduxContext":"../node_modules/react-redux/es/hooks/useReduxContext.js"}],"../node_modules/react-redux/es/hooks/useDispatch.js":[function(require,module,exports) {
 "use strict";
@@ -31475,7 +31483,9 @@ function createDispatchHook(context) {
  */
 
 
-var useDispatch = /*#__PURE__*/createDispatchHook();
+var useDispatch =
+/*#__PURE__*/
+createDispatchHook();
 exports.useDispatch = useDispatch;
 },{"../components/Context":"../node_modules/react-redux/es/components/Context.js","./useStore":"../node_modules/react-redux/es/hooks/useStore.js"}],"../node_modules/react-redux/es/hooks/useSelector.js":[function(require,module,exports) {
 "use strict";
@@ -31622,7 +31632,9 @@ function createSelectorHook(context) {
  */
 
 
-var useSelector = /*#__PURE__*/createSelectorHook();
+var useSelector =
+/*#__PURE__*/
+createSelectorHook();
 exports.useSelector = useSelector;
 },{"react":"../node_modules/react/index.js","./useReduxContext":"../node_modules/react-redux/es/hooks/useReduxContext.js","../utils/Subscription":"../node_modules/react-redux/es/utils/Subscription.js","../utils/useIsomorphicLayoutEffect":"../node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js","../components/Context":"../node_modules/react-redux/es/components/Context.js"}],"../node_modules/react-redux/es/utils/reactBatchedUpdates.js":[function(require,module,exports) {
 "use strict";
@@ -32776,7 +32788,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-},{"./../utils":"../node_modules/axios/lib/utils.js","./../core/settle":"../node_modules/axios/lib/core/settle.js","./../helpers/buildURL":"../node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"../node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"../node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"../node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"../node_modules/axios/lib/core/createError.js","./../helpers/cookies":"../node_modules/axios/lib/helpers/cookies.js"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{"./../utils":"../node_modules/axios/lib/utils.js","./../core/settle":"../node_modules/axios/lib/core/settle.js","./../helpers/buildURL":"../node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"../node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"../node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"../node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"../node_modules/axios/lib/core/createError.js","./../helpers/cookies":"../node_modules/axios/lib/helpers/cookies.js"}],"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -33085,7 +33097,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-},{"./utils":"../node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"../node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"../node_modules/axios/lib/adapters/xhr.js","./adapters/http":"../node_modules/axios/lib/adapters/xhr.js","process":"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
+},{"./utils":"../node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"../node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"../node_modules/axios/lib/adapters/xhr.js","./adapters/http":"../node_modules/axios/lib/adapters/xhr.js","process":"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -33940,7 +33952,9 @@ function uncontrollable(Component, controlledValues, methods) {
   var PROPS_TO_OMIT = controlledProps.map(Utils.defaultKey);
   !(canAcceptRef || !methods.length) ? "development" !== "production" ? (0, _invariant.default)(false, '[uncontrollable] stateless function components cannot pass through methods ' + 'because they have no associated instances. Check component: ' + displayName + ', ' + 'attempting to pass through methods: ' + methods.join(', ')) : (0, _invariant.default)(false) : void 0;
 
-  var UncontrolledComponent = /*#__PURE__*/function (_React$Component) {
+  var UncontrolledComponent =
+  /*#__PURE__*/
+  function (_React$Component) {
     (0, _inheritsLoose2.default)(UncontrolledComponent, _React$Component);
 
     function UncontrolledComponent() {
@@ -34818,7 +34832,9 @@ var EXITING = 'exiting';
 
 exports.EXITING = EXITING;
 
-var Transition = /*#__PURE__*/function (_React$Component) {
+var Transition =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Transition, _React$Component);
 
   function Transition(props, context) {
@@ -35413,7 +35429,9 @@ var defaultProps = {
   getDimensionValue: getDimensionValue
 };
 
-var Collapse = /*#__PURE__*/function (_React$Component) {
+var Collapse =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Collapse, _React$Component);
 
   function Collapse() {
@@ -37496,11 +37514,15 @@ var popper = 'popper';
 exports.popper = popper;
 var reference = 'reference';
 exports.reference = reference;
-var variationPlacements = /*#__PURE__*/basePlacements.reduce(function (acc, placement) {
+var variationPlacements =
+/*#__PURE__*/
+basePlacements.reduce(function (acc, placement) {
   return acc.concat([placement + "-" + start, placement + "-" + end]);
 }, []);
 exports.variationPlacements = variationPlacements;
-var placements = /*#__PURE__*/[].concat(basePlacements, [auto]).reduce(function (acc, placement) {
+var placements =
+/*#__PURE__*/
+[].concat(basePlacements, [auto]).reduce(function (acc, placement) {
   return acc.concat([placement, placement + "-" + start, placement + "-" + end]);
 }, []); // modifiers that need to read the DOM
 
@@ -39791,7 +39813,9 @@ function popperGenerator(generatorOptions) {
   };
 }
 
-var createPopper = /*#__PURE__*/popperGenerator();
+var createPopper =
+/*#__PURE__*/
+popperGenerator();
 exports.createPopper = createPopper;
 },{"./dom-utils/getCompositeRect.js":"../node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js","./dom-utils/getLayoutRect.js":"../node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js","./dom-utils/listScrollParents.js":"../node_modules/@popperjs/core/lib/dom-utils/listScrollParents.js","./dom-utils/getOffsetParent.js":"../node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js","./dom-utils/getComputedStyle.js":"../node_modules/@popperjs/core/lib/dom-utils/getComputedStyle.js","./utils/orderModifiers.js":"../node_modules/@popperjs/core/lib/utils/orderModifiers.js","./utils/debounce.js":"../node_modules/@popperjs/core/lib/utils/debounce.js","./utils/validateModifiers.js":"../node_modules/@popperjs/core/lib/utils/validateModifiers.js","./utils/uniqueBy.js":"../node_modules/@popperjs/core/lib/utils/uniqueBy.js","./utils/getBasePlacement.js":"../node_modules/@popperjs/core/lib/utils/getBasePlacement.js","./utils/mergeByName.js":"../node_modules/@popperjs/core/lib/utils/mergeByName.js","./dom-utils/instanceOf.js":"../node_modules/@popperjs/core/lib/dom-utils/instanceOf.js","./enums.js":"../node_modules/@popperjs/core/lib/enums.js","./types.js":"../node_modules/@popperjs/core/lib/types.js"}],"../node_modules/@popperjs/core/lib/popper-base.js":[function(require,module,exports) {
 "use strict";
@@ -43268,7 +43292,9 @@ function findIndexOf(arr, cb) {
  */
 
 
-var ModalManager = /*#__PURE__*/function () {
+var ModalManager =
+/*#__PURE__*/
+function () {
   function ModalManager(_temp) {
     var _ref = _temp === void 0 ? {} : _temp,
         _ref$hideSiblingNodes = _ref.hideSiblingNodes,
@@ -43528,7 +43554,9 @@ var manager;
  * React hierarchy (such as the default: document.body).
  */
 
-var Modal = /*#__PURE__*/function (_React$Component) {
+var Modal =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Modal, _React$Component);
 
   function Modal() {
@@ -44021,7 +44049,9 @@ var Selector = {
   NAVBAR_TOGGLER: '.navbar-toggler'
 };
 
-var BootstrapModalManager = /*#__PURE__*/function (_ModalManager) {
+var BootstrapModalManager =
+/*#__PURE__*/
+function (_ModalManager) {
   (0, _inheritsLoose2.default)(BootstrapModalManager, _ModalManager);
 
   function BootstrapModalManager() {
@@ -44341,7 +44371,9 @@ function BackdropTransition(props) {
 /* eslint-enable no-use-before-define */
 
 
-var Modal = /*#__PURE__*/function (_React$Component) {
+var Modal =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Modal, _React$Component);
 
   function Modal() {
@@ -45502,7 +45534,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var RefHolder = /*#__PURE__*/function (_React$Component) {
+var RefHolder =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(RefHolder, _React$Component);
 
   function RefHolder() {
@@ -45740,7 +45774,9 @@ function createButton(name, defaultValue, label) {
     label = name;
   }
 
-  return _temp = _class = /*#__PURE__*/function (_React$Component) {
+  return _temp = _class =
+  /*#__PURE__*/
+  function (_React$Component) {
     (0, _inheritsLoose2.default)(_class, _React$Component);
 
     function _class() {
@@ -46616,7 +46652,9 @@ var _TabPane = _interopRequireDefault(require("./TabPane"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable react/require-render-return, react/no-unused-prop-types */
-var Tab = /*#__PURE__*/function (_React$Component) {
+var Tab =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Tab, _React$Component);
 
   function Tab() {
@@ -49042,7 +49080,9 @@ function createReactContext(defaultValue, calculateChangedBits) {
 
   var contextProp = '__create-react-context-' + (0, _gud.default)() + '__';
 
-  var Provider = /*#__PURE__*/function (_Component) {
+  var Provider =
+  /*#__PURE__*/
+  function (_Component) {
     (0, _inheritsLoose2.default)(Provider, _Component);
 
     function Provider() {
@@ -49094,7 +49134,9 @@ function createReactContext(defaultValue, calculateChangedBits) {
 
   Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = _propTypes.default.object.isRequired, _Provider$childContex);
 
-  var Consumer = /*#__PURE__*/function (_Component2) {
+  var Consumer =
+  /*#__PURE__*/
+  function (_Component2) {
     (0, _inheritsLoose2.default)(Consumer, _Component2);
 
     function Consumer() {
@@ -49649,14 +49691,18 @@ var createNamedContext = function createNamedContext(name) {
   return context;
 };
 
-var context = /*#__PURE__*/createNamedContext("Router");
+var context =
+/*#__PURE__*/
+createNamedContext("Router");
 /**
  * The public API for putting history on context.
  */
 
 exports.__RouterContext = context;
 
-var Router = /*#__PURE__*/function (_React$Component) {
+var Router =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Router, _React$Component);
 
   Router.computeRootMatch = function computeRootMatch(pathname) {
@@ -49747,7 +49793,9 @@ if ("development" !== "production") {
  */
 
 
-var MemoryRouter = /*#__PURE__*/function (_React$Component) {
+var MemoryRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(MemoryRouter, _React$Component);
 
   function MemoryRouter() {
@@ -49790,7 +49838,9 @@ if ("development" !== "production") {
   };
 }
 
-var Lifecycle = /*#__PURE__*/function (_React$Component) {
+var Lifecycle =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Lifecycle, _React$Component);
 
   function Lifecycle() {
@@ -50036,7 +50086,9 @@ function evalChildrenDev(children, props, path) {
  */
 
 
-var Route = /*#__PURE__*/function (_React$Component) {
+var Route =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Route, _React$Component);
 
   function Route() {
@@ -50145,7 +50197,9 @@ function noop() {}
  */
 
 
-var StaticRouter = /*#__PURE__*/function (_React$Component) {
+var StaticRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(StaticRouter, _React$Component);
 
   function StaticRouter() {
@@ -50239,7 +50293,9 @@ if ("development" !== "production") {
  */
 
 
-var Switch = /*#__PURE__*/function (_React$Component) {
+var Switch =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(Switch, _React$Component);
 
   function Switch() {
@@ -50427,7 +50483,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * The public API for a <Router> that uses HTML5 history.
  */
-var BrowserRouter = /*#__PURE__*/function (_React$Component) {
+var BrowserRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(BrowserRouter, _React$Component);
 
   function BrowserRouter() {
@@ -50474,7 +50532,9 @@ if ("development" !== "production") {
  */
 
 
-var HashRouter = /*#__PURE__*/function (_React$Component) {
+var HashRouter =
+/*#__PURE__*/
+function (_React$Component) {
   (0, _inheritsLoose2.default)(HashRouter, _React$Component);
 
   function HashRouter() {
@@ -50829,7 +50889,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var MovieCard = /*#__PURE__*/function (_React$Component) {
+var MovieCard =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(MovieCard, _React$Component);
 
   function MovieCard() {
@@ -51188,7 +51250,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var MovieView = /*#__PURE__*/function (_React$Component) {
+var MovieView =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(MovieView, _React$Component);
 
   function MovieView() {
@@ -51263,7 +51327,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var DirectorView = /*#__PURE__*/function (_React$Component) {
+var DirectorView =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(DirectorView, _React$Component);
 
   function DirectorView() {
@@ -51341,7 +51407,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var GenreView = /*#__PURE__*/function (_React$Component) {
+var GenreView =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(GenreView, _React$Component);
 
   function GenreView() {
@@ -51421,7 +51489,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var ProfileView = /*#__PURE__*/function (_React$Component) {
+var ProfileView =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(ProfileView, _React$Component);
 
   function ProfileView(props) {
@@ -51552,7 +51622,7 @@ var _default = (0, _reactRedux.connect)(function (_ref) {
 })(ProfileView);
 
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"../node_modules/react-redux/es/index.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"../node_modules/react-redux/es/index.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js"}],"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -51584,7 +51654,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -51619,12 +51689,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/update-profile/update-profile.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/update-profile/update-profile.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/update-profile/update-profile.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/update-profile/update-profile.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51817,7 +51887,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var MainView = /*#__PURE__*/function (_React$Component) {
+var MainView =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(MainView, _React$Component);
 
   function MainView() {
@@ -52065,7 +52137,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.jsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -52104,7 +52176,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var store = (0, _redux.createStore)(_reducers.default);
 
-var MyFlixApplication = /*#__PURE__*/function (_React$Component) {
+var MyFlixApplication =
+/*#__PURE__*/
+function (_React$Component) {
   _inherits(MyFlixApplication, _React$Component);
 
   function MyFlixApplication() {
@@ -52128,7 +52202,7 @@ var MyFlixApplication = /*#__PURE__*/function (_React$Component) {
 var container = document.getElementsByClassName("app-container")[0];
 
 _reactDom.default.render(_react.default.createElement(MyFlixApplication), container);
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./reducers/reducers":"reducers/reducers.js","./index.scss":"index.scss"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./reducers/reducers":"reducers/reducers.js","./index.scss":"index.scss"}],"../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -52156,7 +52230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61628" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64663" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -52332,5 +52406,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
+},{}]},{},["../../../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
 //# sourceMappingURL=/src.78399e21.js.map
