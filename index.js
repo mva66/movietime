@@ -349,6 +349,10 @@ app.use(function (err, req, res, next) {
 });
 app.use(morgan("common"));
 app.use(express.static("public"));
+pp.use("/client", express.static(path.join(__dirname, "client", "dist")));
+app.get("/client/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).send("Something broke!");
