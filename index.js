@@ -10,8 +10,7 @@ const app = express();
 const Movies = Models.Movie;
 const Users = Models.User;
 const { check, validationResult } = require("express-validator");
-// local connection
-//mongoose.connect("mongodb://localhost:27017/myflixdb", {useNewUrlParser: true});
+
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true });
 
 app.use(morgan("common"));
