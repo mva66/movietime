@@ -14,7 +14,7 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://myflix16.herokuapp.com/login", {
+      .post("https://mehak-movieapi.herokuapp.com/login", {
         Username: username,
         Password: password,
       })

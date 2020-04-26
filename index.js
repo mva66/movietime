@@ -29,7 +29,7 @@ require("./passport");
 
 var allowedOrigins = [
   "http://localhost:8080",
-  "http://localhost:1234,https://mehak-movieapi.herokuapp.com/",
+  "http://localhost:1234,https://mehak-movieapi.herokuapp.com",
 ];
 
 app.use(
