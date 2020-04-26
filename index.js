@@ -118,7 +118,7 @@
 //     });
 // });
 
-// //get a user by username
+// //get a user by Username
 // app.get(
 //   "/users/:Username",
 //   passport.authenticate("jwt", { session: false }),
@@ -313,7 +313,8 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"),
+  methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const Models = require("./models.js");
 var jwtSecret = "your_jwt_secret"; // This has to be the same key used in the JWTStrategy
@@ -343,16 +344,12 @@ app.use(
 );
 app.use(bodyParser.json());
 var auth = require("./auth")(app);
-// app.use(methodOverride());
+app.use(methodOverride());
 app.use(function (err, req, res, next) {
   // logic
 });
 app.use(morgan("common"));
 app.use(express.static("public"));
-app.use("/client", express.static(path.join(__dirname, "client", "dist")));
-app.get("/client/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
 app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).send("Something broke!");
@@ -385,8 +382,8 @@ app.get("/users", function (req, res) {
       res.status(500).send("Error: " + err);
     });
 });
-app.get("/users/:UserName", function (req, res) {
-  Users.findOne({ UserName: req.params.UserName })
+app.get("/users/:Username", function (req, res) {
+  Users.findOne({ Username: req.params.Username })
     .then(function (user) {
       res.json(user);
     })
@@ -406,9 +403,9 @@ app.post(
   //or use .isLength({min: 5}) which means
   //minimum value of 5 characters are only allowed
   [
-    check("UserName", "Username is required").isLength({ min: 5 }),
+    check("Username", "Username is required").isLength({ min: 5 }),
     // check(
-    //   "UserName",
+    //   "Username",
     //   "Username contains non alphanumeric characters - not allowed."
     // ).isAlphanumeric(),
     check("Password", "Password is required").not().isEmpty(),
@@ -423,14 +420,14 @@ app.post(
     }
 
     var hashedPassword = Users.hashPassword(req.body.Password);
-    Users.findOne({ UserName: req.body.UserName }) // Search to see if a user with the requested username already exists
+    Users.findOne({ Username: req.body.Username }) // Search to see if a user with the requested Username already exists
       .then(function (user) {
         if (user) {
           //If the user is found, send a response that it already exists
-          return res.status(400).send(req.body.UserName + " already exists");
+          return res.status(400).send(req.body.Username + " already exists");
         } else {
           Users.create({
-            UserName: req.body.UserName,
+            Username: req.body.Username,
             Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday,
@@ -451,12 +448,12 @@ app.post(
   }
 );
 
-app.put("/users/:UserName", function (req, res) {
+app.put("/users/:Username", function (req, res) {
   Users.findOneAndUpdate(
-    { UserName: req.params.UserName },
+    { Username: req.params.Username },
     {
       $set: {
-        UserName: req.body.UserName,
+        Username: req.body.Username,
         Password: req.body.Password,
         Email: req.body.Email,
         Birthday: req.body.Birthday,
@@ -474,13 +471,13 @@ app.put("/users/:UserName", function (req, res) {
   );
 });
 
-app.delete("/users/:UserName", function (req, res) {
-  Users.findOneAndRemove({ UserName: req.params.UserName })
+app.delete("/users/:Username", function (req, res) {
+  Users.findOneAndRemove({ Username: req.params.Username })
     .then(function (user) {
       if (!user) {
-        res.status(400).send(req.params.UserName + " was not found");
+        res.status(400).send(req.params.Username + " was not found");
       } else {
-        res.status(200).send(req.params.UserName + " was deleted.");
+        res.status(200).send(req.params.Username + " was deleted.");
       }
     })
     .catch(function (err) {
@@ -490,7 +487,7 @@ app.delete("/users/:UserName", function (req, res) {
 });
 app.post("/users/:Username/Movies/:MovieID", function (req, res) {
   Users.findOneAndUpdate(
-    { UserName: req.params.UserName },
+    { Username: req.params.Username },
     {
       $push: { FavoriteMovies: req.params.MovieID },
     },

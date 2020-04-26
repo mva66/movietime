@@ -217,7 +217,7 @@ export class MainView extends React.Component {
 
   getMovies(token) {
     axios
-      .get("https://terranovas.herokuapp.com/movies", {
+      .get("https://myflix16.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -230,7 +230,7 @@ export class MainView extends React.Component {
 
   getUser(token) {
     axios
-      .get("https://terranovas.herokuapp.com/users", {
+      .get("https://myflix16.herokuapp.com/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

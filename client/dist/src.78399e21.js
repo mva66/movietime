@@ -51702,7 +51702,7 @@ function (_React$Component) {
     value: function getMovies(token) {
       var _this2 = this;
 
-      _axios.default.get("https://terranovas.herokuapp.com/movies", {
+      _axios.default.get("https://myflix16.herokuapp.com/movies", {
         headers: {
           Authorization: "Bearer ".concat(token)
         }
@@ -51717,7 +51717,7 @@ function (_React$Component) {
     value: function getUser(token) {
       var _this3 = this;
 
-      _axios.default.get("https://terranovas.herokuapp.com/users", {
+      _axios.default.get("https://myflix16.herokuapp.com/users", {
         headers: {
           Authorization: "Bearer ".concat(token)
         }
@@ -52162,7 +52162,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60422" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61800" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
