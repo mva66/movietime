@@ -313,8 +313,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const bodyParser = require("body-parser"),
-  methodOverride = require("method-override");
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Models = require("./models.js");
 var jwtSecret = "your_jwt_secret"; // This has to be the same key used in the JWTStrategy
@@ -344,7 +343,6 @@ app.use(
 );
 app.use(bodyParser.json());
 var auth = require("./auth")(app);
-app.use(methodOverride());
 app.use(function (err, req, res, next) {
   // logic
 });
