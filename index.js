@@ -27,11 +27,15 @@ var auth = require("./auth")(app);
 const passport = require("passport");
 require("./passport");
 
-var allowedOrigins = ["*"];
+var allowedOrigins = [
+  "http://localhost:8080",
+  "http://localhost:1234",
+  "https://mehak-movieapi.herokuapp.com",
+];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
+    origin: (origin, callback) => {
       if (!origin) return callback(null, true);
 
       if (allowedOrigins.indexOf(origin) === -1) {
