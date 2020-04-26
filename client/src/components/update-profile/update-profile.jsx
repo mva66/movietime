@@ -19,7 +19,9 @@ export function UpdateProfile(props) {
     // send a request to the server for authentication
     axios
       .put(
-        `https://myflix16.herokuapp.com/users/${localStorage.getItem("user")}`,
+        `https://mehak-movieapi.herokuapp.com/users/${localStorage.getItem(
+          "user"
+        )}`,
         {
           Username: username,
           Password: password,

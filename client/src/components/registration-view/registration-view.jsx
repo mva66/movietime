@@ -99,7 +99,7 @@ export function RegistrationView(props) {
   const handleRegister = (e) => {
     e.preventDefault();
     axios
-      .post("https://myflix16.herokuapp.com/users", {
+      .post("https://mehak-movieapi.herokuapp.com/users", {
         Username: username,
         Password: password,
         Email: email,
